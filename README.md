@@ -1,7 +1,7 @@
-<h1 align='center'> mytemplate-project-node-express-eslint-prettier </h1>
-<h2 align='center'> template project nodejs express and sucrase nodemon , configured eslint with prettier</h2>
+<h1 align='center'> BET THE HERO </h1>
+<h2 align='center'> application reocketseat</h2>
 
- `$ git clone https://github.com/Natanaelvich/template-nodejs-express.git`
+ `$ git clone git@github.com:Natanaelvich/be-the-hero-backend.git`
   
   > install depedencies
   
