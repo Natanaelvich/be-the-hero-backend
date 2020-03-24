@@ -2,11 +2,7 @@ import connection from '../database';
 
 export default {
   async index(req, res) {
-    const { ong_id } = req.headers;
-
-    const incidents = await connection('incidents')
-      .select('*')
-      .where('ong_id', ong_id);
+    const incidents = await connection('incidents').select('*');
 
     return res.json(incidents);
   },
@@ -24,5 +20,26 @@ export default {
     });
 
     return res.json(incident);
+  },
+
+  async destroy(req, res) {
+    const { id } = req.params;
+
+    const { ong_id } = req.headers;
+
+    const incident = await connection('incidents')
+      .select('ong_id')
+      .where('id', id)
+      .first();
+
+    if (incident.ong_id !== ong_id) {
+      return res.status(401).json({ error: 'unauthourized' });
+    }
+
+    await connection('incidents')
+      .where('id', id)
+      .delete();
+
+    return res.status(204).send();
   },
 };
