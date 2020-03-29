@@ -14,6 +14,19 @@ module.exports = {
       directory: 'src/database/migrations',
     },
   },
+  test: {
+    client: 'mysql',
+    connection: {
+      host: '127.0.0.1',
+      user: 'root',
+      password: '12345',
+      database: 'hero_test',
+    },
+    migrations: {
+      tableName: 'migrations',
+      directory: 'src/database/migrations',
+    },
+  },
 
   staging: {
     client: 'postgresql',
@@ -46,4 +59,4 @@ module.exports = {
       tableName: 'knex_migrations',
     },
   },
-}
+};

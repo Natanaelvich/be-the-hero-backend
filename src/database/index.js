@@ -1,6 +1,11 @@
 import knex from 'knex';
 import configDatabse from '../../knexfile';
 
-const connection = knex(configDatabse.development);
+const config =
+  process.env.NODE_ENV === 'test'
+    ? configDatabse.test
+    : configDatabse.development;
+
+const connection = knex(config);
 
 export default connection;
