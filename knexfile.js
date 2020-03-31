@@ -29,34 +29,30 @@ module.exports = {
   },
 
   staging: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
-    },
-    pool: {
-      min: 2,
-      max: 10,
+      host: '127.0.0.1',
+      user: 'root',
+      password: '12345',
+      database: 'hero',
     },
     migrations: {
-      tableName: 'knex_migrations',
+      tableName: 'migrations',
+      directory: 'src/database/migrations',
     },
   },
 
   production: {
-    client: 'postgresql',
+    client: 'mysql',
     connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password',
-    },
-    pool: {
-      min: 2,
-      max: 10,
+      host: '127.0.0.1',
+      user: 'root',
+      password: '12345',
+      database: 'hero',
     },
     migrations: {
-      tableName: 'knex_migrations',
+      tableName: 'migrations',
+      directory: 'src/database/migrations',
     },
   },
 };
